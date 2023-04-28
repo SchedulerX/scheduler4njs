@@ -1,6 +1,6 @@
 {
   "name": "scheduler4njs",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": " Scheduler4js library module for nestjs framework",
   "main": "dist/index.js",
   "module": "dist/index",
@@ -10,7 +10,7 @@
     "build": "tsc",
     "format": "prettier --write \"lib/**/*.ts\"",
     "lint": "tslint -p tsconfig.json",
-    "release": "npm run build & npm publish"
+    "release": "tsc & npm publish"
   },
   "author": "",
   "license": "MIT",

@@ -55,19 +55,19 @@ import { Scheduler } from "scheduler4js";
 @Controller()
 export class AppService {
   constructor(@InjectScheduler4js() private readonly scheduler4js: Scheduler) {
-    scheduler.on("begin", (job) => {
+    scheduler4js.on("begin", (job) => {
       console.log("begin", job);
     });
 
-    scheduler.on("completed", (job) => {
+    scheduler4js.on("completed", (job) => {
       console.log("completed", job);
     });
 
-    scheduler.on("fail", (err, job) => {
+    scheduler4js.on("fail", (err, job) => {
       console.log("fail", err, job);
     });
 
-    scheduler.enqueueJob({
+    scheduler4js.enqueueJob({
       name: "halil",
       concurrency: 1,
       type: "x",

@@ -20,7 +20,7 @@ yarn add scheduler4njs
 
 ```ts
 import { Module } from "@nestjs/common";
-import { RedisModule } from "@nestjs-modules/ioredis";
+import { Scheduler4jsModule } from "scheduler4njs";
 import { AppService } from "./app.service";
 
 const dbConfig = {
@@ -41,7 +41,7 @@ const config = {
 };
 
 @Module({
-  imports: [RedisModule.forRootAsync({ dbConfig, config })],
+  imports: [Scheduler4jsModule.forRootAsync({ dbConfig, config })],
   providers: [AppService],
 })
 export class AppModule {}

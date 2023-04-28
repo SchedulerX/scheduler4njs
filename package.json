@@ -1,0 +1,44 @@
+{
+  "name": "scheduler4njs",
+  "version": "0.0.1",
+  "description": " Scheduler4js library module for nestjs framework",
+  "main": "dist/index.js",
+  "module": "dist/index",
+  "typings": "dist/index",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "format": "prettier --write \"lib/**/*.ts\"",
+    "lint": "tslint -p tsconfig.json",
+    "release": "npm run build & npm publish"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^5.0.4"
+  },
+  "dependencies": {
+    "@nestjs/common": "^9.4.0",
+    "scheduler4js": "^1.2.3"
+  },
+  "files": [
+    "dist/**/*"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SchedulerX/scheduler4njs.git"
+  },
+  "keywords": [
+    "scheduler",
+    "nodejs",
+    "sql",
+    "job",
+    "cron",
+    "runner",
+    "jobs",
+    "nestjs"
+  ],
+  "bugs": {
+    "url": "https://github.com/SchedulerX/scheduler4njs/issues"
+  }
+}

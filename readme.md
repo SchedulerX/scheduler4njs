@@ -7,7 +7,7 @@ It's a scheduler4js library module for Nest.JS framework
 #### with npm
 
 ```sh
-npm install scheduler4njs
+npm i scheduler4njs
 ```
 
 #### with yarn
@@ -41,7 +41,7 @@ const config = {
 };
 
 @Module({
-  imports: [Scheduler4jsModule.forRootAsync({ dbConfig, config })],
+  imports: [Scheduler4jsModule.registerAsync({ dbConfig, config })],
   providers: [AppService],
 })
 export class AppModule {}
@@ -50,7 +50,12 @@ export class AppModule {}
 #### InjectScheduler4js(options)
 
 ```ts
-import { Scheduler } from "scheduler4js";
+import {
+  CronUtil,
+  InjectScheduler4js,
+  Scheduler,
+  Timezone,
+} from "scheduler4njs";
 
 @Controller()
 export class AppService {

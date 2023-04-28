@@ -3,20 +3,18 @@ import { Scheduler4jsModuleOptions } from "./interface";
 import { Scheduler } from "scheduler4js";
 import { getModuleToken } from "./util";
 
+export class ConfigModuleOptionsFactory {}
 @Global()
 @Module({})
 export class Scheduler4jsCoreModule {
-  public static forRootAsync(
+  public static registerAsync(
     options: Scheduler4jsModuleOptions
   ): DynamicModule {
     const provider: Provider = {
       provide: getModuleToken(options),
-      useFactory: async (
-        options: Scheduler4jsModuleOptions
-      ): Promise<Scheduler> => {
+      useFactory: async (): Promise<Scheduler> => {
         return await Scheduler.init(options);
       },
-      inject: [getModuleToken(options)],
     };
 
     return {

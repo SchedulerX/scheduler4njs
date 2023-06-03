@@ -57,7 +57,7 @@ import {
   Timezone,
 } from "scheduler4njs";
 
-@Controller()
+@Injectable()
 export class AppService {
   constructor(@InjectScheduler4js() private readonly scheduler4js: Scheduler) {
     scheduler4js.on("begin", (job) => {
